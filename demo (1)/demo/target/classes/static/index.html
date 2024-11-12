@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Index</title>
+</head>
+<body>
+
+<h1>Form using springboot</h1>
+<form action="/register" method="post">
+
+<label for="firstname">First Name :</label> <br/>
+<input type ="text" name="fname" th:value="${user.fname}"/> <br/>
+
+<label for="Lastname">Last Name :</label> <br/>
+<input type ="text" name="lname"/> <br/>
+
+<label for="email">Email ID:</label> <br/>
+<input type ="email" name="email"/> <br/>
+
+<label for="dob">Date of Birth :</label> <br/>
+<input type ="date" name="dob"/> <br/>
+
+<label for="password">Password :</label> <br/>
+<input type ="password" name="passwd"/> <br/>
+
+<label for="gender">Gender :</label> <br/>
+<select name = "gender">
+		<option value=""></option>
+		<option value="male"></option>
+		<option value="Female"></option>
+</select>
+<br/>
+<button type="submit">Submit</button>
+
+</form>
+<div th:if="${user != null}">
+    <h2>Submitted Information:</h2>
+    <p><strong>First Name:</strong> <span th:text="${user.fname}"></span></p>
+</div>
+</body>
+</html>
